@@ -138,9 +138,20 @@
                         break;
                     case "6":
                         var popZenek = zenek
-        
+        .Where(z => z.Mufaj.Equals("Pop", StringComparison.OrdinalIgnoreCase))
+        .ToList();
 
-                       
+                        if (popZenek.Count == 0)
+                        {
+                            Console.WriteLine("Nincs Pop műfajú zene.");
+                        }
+                        else
+                        {
+                            foreach (var z in popZenek)
+                            {
+                                Console.WriteLine($"{z.Cim} - {z.Eloado} ({z.Mufaj}, {z.HosszMp} mp)");
+                            }
+                        }
                         break;
                     case "7":
                         Console.Clear();
