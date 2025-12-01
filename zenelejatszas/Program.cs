@@ -24,7 +24,12 @@
     {
         static void Main(string[] args)
         {
-           
+            string fajlnev = "C:\\Users\\pappg\\Desktop\\Zenék\\zene.txt";
+
+            List<Zene> zenek = new List<Zene>();
+
+            string[] sorok = File.ReadAllLines(fajlnev);
+
             // az első sor a fejléc → átugorjuk
             for (int i = 1; i < sorok.Length; i++)
             {
